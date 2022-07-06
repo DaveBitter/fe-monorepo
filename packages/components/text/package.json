@@ -1,5 +1,6 @@
 {
   "name": "@davebitter/text",
-  "version": "1.0.0",
+  "version": "0.0.2",
+  "repository": "git://github.com/davebitter/fe-monorepo.git",
   "dependencies": {}
 }

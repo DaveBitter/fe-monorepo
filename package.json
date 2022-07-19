@@ -8,7 +8,9 @@
     "packages/utilities/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "start-storybook -p 6006",
+    "build": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,16 @@
   "homepage": "https://github.com/DaveBitter/fe-monorepo#readme",
   "dependencies": {
     "@changesets/cli": "^2.23.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/web-components": "^6.5.9",
+    "babel-loader": "^8.2.5",
+    "lit-html": "^2.2.6"
   }
 }

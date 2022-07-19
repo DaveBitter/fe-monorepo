@@ -11,6 +11,7 @@ export type ButtonProps = {
   size?: "small" | "medium" | "large";
   label?: string;
   onClick?: () => void;
+  testId?: string;
 };
 const Button = ({
   primary,
@@ -18,6 +19,7 @@ const Button = ({
   size,
   label,
   onClick,
+  testId = "button",
 }: ButtonProps) => {
   const mode = primary ? "button--primary" : "button--secondary";
 
@@ -27,6 +29,7 @@ const Button = ({
       class=${["button", `button--${size || "medium"}`, mode].join(" ")}
       style=${styleMap({ backgroundColor })}
       @click=${onClick}
+      data-testid="${testId}"
     >
       ${label}
     </button>

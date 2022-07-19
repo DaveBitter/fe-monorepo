@@ -8,7 +8,10 @@
     "packages/utilities/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest ./packages",
+    "test:watch": "yarn test --watch",
+    "test:regression": "jest /.storybook/storyshots.spec.ts",
+    "test:visual-regression": "jest ./.storybook/imageshots.spec.ts",
     "dev": "start-storybook -p 6006",
     "build": "build-storybook"
   },
@@ -24,17 +27,35 @@
   },
   "homepage": "https://github.com/DaveBitter/fe-monorepo#readme",
   "dependencies": {
-    "@changesets/cli": "^2.23.0"
+    "jest-environment-jsdom": "^28.1.3",
+    "jsdom": "^20.0.0",
+    "lit-element": "^3.2.1",
+    "lit-element-state-decoupler": "^2.0.2",
+    "pure-lit": "^2.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@changesets/cli": "^2.23.0",
+    "@open-wc/testing-helpers": "^2.1.2",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
+    "@storybook/addon-storyshots": "^6.5.9",
+    "@storybook/addon-storyshots-puppeteer": "^6.5.9",
     "@storybook/builder-webpack4": "^6.5.9",
     "@storybook/manager-webpack4": "^6.5.9",
     "@storybook/web-components": "^6.5.9",
+    "@testing-library/dom": "^8.16.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/user-event": "^14.2.6",
+    "@types/jest": "^28.1.6",
     "babel-loader": "^8.2.5",
-    "lit-html": "^2.2.6"
+    "jest": "^28.1.3",
+    "lit-html": "^2.2.6",
+    "puppeteer": "^15.4.0",
+    "testing-library__dom": "^7.29.4-beta.1",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
   }
 }

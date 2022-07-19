@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Text h6 1`] = `
+Object {
+  "_$litType$": 1,
+  "strings": Array [
+    "
+    ",
+    "
+  ",
+  ],
+  "values": Array [
+    Object {
+      "_$litDirective$": [Function],
+      "values": Array [
+        "
+    <h6 class='text' data-testid=\\"text\\">
+      Text
+    </h6>
+  ",
+      ],
+    },
+  ],
+}
+`;

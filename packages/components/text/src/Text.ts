@@ -1,5 +1,6 @@
 import { html } from "lit-html";
-import { unsafeHTML } from "lit-html/directives/unsafe-html";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
+
 import "./styles/text.css";
 
 /**
@@ -29,10 +30,11 @@ export type TextProps = {
     | "i"
     | "b";
   label?: string;
+  testId?: string;
 };
-const Text = ({ tagName = "p", label = "" }: TextProps) => {
+const Text = ({ tagName = "p", label = "", testId = "text" }: TextProps) => {
   const template = `
-    <${tagName} class='text'>
+    <${tagName} class='text' data-testid="${testId}">
       ${label}
     </${tagName}>
   `;

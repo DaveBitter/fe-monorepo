@@ -1,4 +1,4 @@
-name: Build and Deploy to Netlify
+name: Master Deploy
 on:
   push:
   pull_request:
@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Use Node.js 16.x
         uses: actions/setup-node@v1
         with:
@@ -43,10 +43,6 @@ jobs:
           echo registry=https://registry.npmjs.org >> ./.npmrc
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      - name: dave
-        run: cat ./.npmrc
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       - name: Publish changeset
         uses: borales/actions-yarn@v3.0.0
         with:
@@ -72,6 +68,7 @@ jobs:
       - name: Create commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          file_pattern: packages/**/* .changeset/**/*
+          file_pattern: packages .changeset
           commit_message: 'chore(ci): commit updated files in workflow'
           commit_options: '--no-verify --signoff'
+          branch: master

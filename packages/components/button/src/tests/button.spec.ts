@@ -7,7 +7,7 @@ describe('Button', () => {
 		await fixture(Button({ label: 'test', testId: 'test-button' }));
 	});
 
-	it('renders passed label in button', () => {
+	it('renders passed label in as text in button', () => {
 		expect(screen.getByTestId('test-button')).toHaveTextContent('test');
 	});
 });

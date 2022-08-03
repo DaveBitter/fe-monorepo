@@ -17,11 +17,13 @@
     "lint:ts": "eslint --fix packages/**/*.ts",
     "format": "prettier --write \"**/*.{css,ts,js}\"",
     "dev": "start-storybook -p 6006",
-    "build": "build-storybook",
+    "build": "build-storybook --quiet -o dist",
     "prepare": "husky install",
     "cz": "git cz",
     "manypkg:check": "manypkg check",
-    "manypkg:fix": "manypkg fix"
+    "manypkg:fix": "manypkg fix",
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish"
   },
   "config": {
     "commitizen": {

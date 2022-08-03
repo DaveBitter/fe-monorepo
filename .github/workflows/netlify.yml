@@ -1,0 +1,77 @@
+name: Build and Deploy to Netlify
+on:
+  push:
+  pull_request:
+jobs:
+  master-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+      - name: Lint packages
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: lint
+      - name: Format packages
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: format
+      - name: Check package.json files
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: manypkg:fix
+      - name: Run unit tests
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: test
+      - name: Version changeset
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: changeset:version
+      - name: Authenticate with private NPM package
+        run: |
+          echo @davebitter:registry=https://npm.pkg.github.com/davebitter >> ./.npmrc
+          echo //npm.pkg.github.com/:_authToken=${ACCESS_TOKEN} >> ./.npmrc
+          echo registry=https://registry.npmjs.org >> ./.npmrc
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: dave
+        run: cat ./.npmrc
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - name: Publish changeset
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: changeset:publish
+      - name: Create build
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: build
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: './dist'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+      - name: Create commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          file_pattern: packages/**/* .changeset/**/*
+          commit_message: 'chore(ci): commit updated files in workflow'
+          commit_options: '--no-verify --signoff'

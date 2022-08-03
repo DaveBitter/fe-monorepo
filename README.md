@@ -1,5 +1,7 @@
 # FE monorepo
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f1e7fff1-c7c9-4fb2-a243-057c565484bd/deploy-status)](https://app.netlify.com/sites/fe-monorepo/deploys)
+
 ![abstract artwork for series](./docs/series.png)
 
 **FE monorepo is a component library build to showcase how you can set up a monorepo architecture for your next component library.**

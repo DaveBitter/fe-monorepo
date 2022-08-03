@@ -1,6 +1,6 @@
 {
   "name": "@davebitter/button",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "git://github.com/davebitter/fe-monorepo.git",
   "dependencies": {
     "lit-html": "^2.2.6"

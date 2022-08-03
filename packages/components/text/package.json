@@ -2,5 +2,12 @@
   "name": "@davebitter/text",
   "version": "0.0.2",
   "repository": "git://github.com/davebitter/fe-monorepo.git",
-  "dependencies": {}
+  "dependencies": {
+    "lit": "^2.2.7",
+    "lit-html": "^2.2.6"
+  },
+  "devDependencies": {
+    "@open-wc/testing-helpers": "^2.1.2",
+    "testing-library__dom": "^7.29.4-beta.1"
+  }
 }

@@ -1,0 +1,4 @@
+**/package.json
+**/CHANGELOG.md
+**/*.log
+node_modules

@@ -1,0 +1,5 @@
+{
+	"packages/**/*.{js,ts}": "eslint --cache",
+	"packages/**/*.css}": "stylelint --fix",
+	"packages/**/*.{js,ts,css,json,md}": "prettier --write"
+}

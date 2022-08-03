@@ -1,1 +1,3 @@
-export * from "./format-date";
+import formatDate from './format-date';
+
+export default formatDate;

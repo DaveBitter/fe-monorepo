@@ -1,5 +1,6 @@
 {
 	"packages/**/*.{js,ts}": "eslint --cache",
 	"packages/**/*.css}": "stylelint --fix",
-	"packages/**/*.{js,ts,css,json,md}": "prettier --write"
+	"packages/**/*.{js,ts,css,json,md}": "prettier --write",
+	"packages/**/*": "manypkg fix"
 }

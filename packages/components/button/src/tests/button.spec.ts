@@ -1,5 +1,6 @@
-import { screen } from 'testing-library__dom';
 import { fixture } from '@open-wc/testing-helpers';
+import { screen } from 'testing-library__dom';
+
 import Button from '../Button';
 
 describe('Button', () => {

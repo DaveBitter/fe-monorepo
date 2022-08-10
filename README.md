@@ -23,7 +23,7 @@ This repository is build up by multiple steps translated in the following articl
 - **Lit Element** - used as the front-end framework of choice
 - **Storybook** - used to document components
 
-## [How do I set up unit, snapshot and visual regression testing?](https://techhub.iodigital.com/articles/how-do-i-build-a-component-library/unit-snapshot-visual-regression-testing)
+## [How do I set up linting, unit, snapshot and visual regression testing?](https://techhub.iodigital.com/articles/how-do-i-build-a-component-library/unit-snapshot-visual-regression-testing)
 
 ![abstract artwork for unit, snapshot and visual regression](./docs/unit-snapshot-visual-regression-test.png)
 

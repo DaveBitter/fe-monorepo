@@ -1,5 +1,5 @@
-import path from 'path';
 import initStoryshots, { multiSnapshotWithOptions } from '@storybook/addon-storyshots';
+import path from 'path';
 
 initStoryshots({
 	suite: 'Storyshots',

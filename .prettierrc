@@ -3,5 +3,15 @@
 	"singleQuote": true,
 	"trailingComma": "es5",
 	"proseWrap": "preserve",
-	"printWidth": 100
+	"printWidth": 100,
+	"importOrder": [
+		"^lit/?(.*)$",
+		"<THIRD_PARTY_MODULES>",
+		"^@davebitter/(.*)$",
+		"^../(.*)$",
+		"^./(?!styles/(.*)$)",
+		"^\\./styles/(.*)$"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
 }

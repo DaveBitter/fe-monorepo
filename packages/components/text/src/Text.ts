@@ -1,5 +1,6 @@
+/* eslint-disable import/extensions */
 import { html } from 'lit-html';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js'; // eslint-disable-line import/extensions
+import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 
 import './styles/text.css';
 

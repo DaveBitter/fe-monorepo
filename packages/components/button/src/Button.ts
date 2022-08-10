@@ -1,5 +1,7 @@
+/* eslint-disable import/extensions */
 import { html } from 'lit-html';
-import { styleMap } from 'lit-html/directives/style-map.js'; // eslint-disable-line import/extensions
+import { styleMap } from 'lit-html/directives/style-map.js';
+
 import './styles/button.css';
 
 /**

@@ -4,10 +4,8 @@ exports[`Storyshots Components/Text h4 1`] = `
 Object {
   "_$litType$": 1,
   "strings": Array [
-    "
-    ",
-    "
-  ",
+    " ",
+    " ",
   ],
   "values": Array [
     Object {

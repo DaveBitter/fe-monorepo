@@ -24,7 +24,7 @@ jobs:
       - name: Format packages
         uses: borales/actions-yarn@v3.0.0
         with:
-          cmd: format
+          cmd: format:fix
       - name: Check package.json files
         uses: borales/actions-yarn@v3.0.0
         with:

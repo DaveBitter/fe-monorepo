@@ -4,7 +4,7 @@ import path from 'path';
 
 initStoryshots({
 	suite: 'Imageshots',
-	framework: 'web-components',
+	framework: 'web-componentsss',
 	test: imageSnapshot({
 		storybookUrl: `file://${path.resolve(__dirname, '../storybook-static')}`,
 	}),

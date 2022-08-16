@@ -1,7 +1,8 @@
 name: Master Deploy
 on:
   push:
-  pull_request:
+    branches:
+      - master
 jobs:
   master-deploy:
     runs-on: ubuntu-18.04

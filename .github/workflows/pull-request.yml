@@ -1,0 +1,34 @@
+name: Pull Request
+on:
+  push:
+  pull_request:
+jobs:
+  pull-request:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install
+      - name: Lint packages
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: lint
+      - name: Format packages check
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: format:check
+      - name: Check package.json files
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: manypkg:check
+      - name: Run unit tests
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: test

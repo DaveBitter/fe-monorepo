@@ -16,7 +16,7 @@ This repository is build up by multiple steps translated in the following articl
 - **Changeset** - used to help with SemVer
 - **GitHub package registry** - used to publish versioned packages to be installed through NPM
 
-## [How do I set up a front-end framework & showcase it with Storybook?](https://techhub.iodigital.com/articles/how-do-i-build-a-component-library/front-end-framework-storybook)
+## [How do I pick a front-end framework & showcase it with Storybook?](https://techhub.iodigital.com/articles/how-do-i-build-a-component-library/front-end-framework-storybook)
 
 ![abstract artwork for fe framework and storybook](./docs/front-end-framework-storybook.png)
 
